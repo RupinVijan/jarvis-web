@@ -72,9 +72,9 @@ StartJarvis.addEventListener("click",()=>{
     recognition.start();
 })
 
-StopJarvis.addEventListener("click",()=>{
-    recognition.onend()
-})
+// StopJarvis.addEventListener("click",()=>{
+//     recognition.onend()
+// })
 
 
 function readOut(message){
@@ -94,13 +94,11 @@ function readOut(message){
 setInterval(() => {
     const today = new Date();
     var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-    document.querySelector(".clock").innerText= time;
+    document.querySelector(".clock").innerText="Time "+ time;
 }, 1000);
-setInterval(() => {
     navigator.getBattery().then(function(battery) {
 
         var level = battery.level *100;
     
-        document.querySelector(".battery").innerText= level+"%";
+        document.querySelector(".battery").innerText="Battery : "+ level+"%";
     });
-}, 5000);
